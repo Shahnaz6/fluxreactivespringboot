@@ -21,6 +21,22 @@ public class SampleHandlerFuction {
                 );
         
     }
+
+    public Mono<ServerResponse> mono(ServerRequest serverRequest){
+
+        return ServerResponse.ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(
+                        Mono.just(1)
+                                .log(), Integer.class
+                );
+
+    }
+    
+    
+    
+    
+    
 }
 
 
